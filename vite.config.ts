@@ -28,6 +28,9 @@ export default defineConfig(({ mode }) => {
         assetsInlineLimit: 4096, // Inline small assets as base64
         emptyOutDir: true,
         rollupOptions: {
+          input: {
+            main: path.resolve(__dirname, 'index.tsx'),
+          },
           output: {
             manualChunks: (id) => {
               // Core React libraries
