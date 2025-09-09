@@ -10,7 +10,7 @@ import { useScrollSpy } from './hooks/useScrollSpy';
 import { preloadHighPriorityVisualizations } from './utils/visualizationRegistry';
 import { initPerformanceMonitoring } from './utils/performanceMonitor';
 import { initGlobalErrorHandling } from './utils/globalErrorHandler';
-import ResponsiveTestingPanel from './src/components/ResponsiveTestingPanel';
+// import ResponsiveTestingPanel from './src/components/ResponsiveTestingPanel'; // Temporarily commented out
 import { webVitalsTracker } from './utils/webVitals';
 import { errorMonitor } from './utils/errorMonitoring';
 import { analytics } from './utils/analytics';
@@ -214,7 +214,7 @@ const App: React.FC = () => {
       </main>
       
       {/* Responsive Testing Panel (development only) */}
-      <ResponsiveTestingPanel />
+      {/* <ResponsiveTestingPanel /> */}
       
       {/* Monitoring Dashboard (debug mode only) */}
       {(import.meta.env.VITE_ENABLE_DEBUG_MODE === 'true' || import.meta.env.DEV) && (
