@@ -61,6 +61,16 @@ class Analytics {
     if (this.config.enabled) {
       this.initializeSession();
       this.setupEventListeners();
+    } else {
+      // Ensure session is always initialized, even if tracking is disabled
+      this.session = {
+        id: this.generateSessionId(),
+        startTime: Date.now(),
+        lastActivity: Date.now(),
+        pageViews: 0,
+        interactions: 0,
+        timeSpent: 0
+      };
     }
   }
 
@@ -284,8 +294,17 @@ class Analytics {
     }
   }
 
+  private ensureSessionInitialized(): void {
+    if (!this.session) {
+      this.initializeSession();
+    }
+  }
+
   // Public methods for tracking specific events
   public trackPageView(page: string, title?: string): void {
+    this.ensureSessionInitialized();
+    if (!this.config.enabled) return;
+
     this.session.pageViews++;
     this.trackEvent('navigation', 'page_view', page, undefined, {
       pageTitle: title || document.title,
