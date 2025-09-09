@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homodynamics</title>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "d3": "https://cdn.jsdelivr.net/npm/d3@7/+esm",
+    "d3-scale": "https://aistudiocdn.com/d3-scale@^4.0.2",
+    "d3-array": "https://aistudiocdn.com/d3-array@^3.2.4",
+    "d3-shape": "https://aistudiocdn.com/d3-shape@^3.2.0",
+    "d3-force": "https://aistudiocdn.com/d3-force@^3.0.0",
+    "d3-drag": "https://aistudiocdn.com/d3-drag@^3.0.0",
+    "d3-ease": "https://aistudiocdn.com/d3-ease@^3.0.1",
+    "d3-timer": "https://aistudiocdn.com/d3-timer@^3.0.1",
+    "d3-path": "https://aistudiocdn.com/d3-path@^3.1.0",
+    "d3-selection": "https://aistudiocdn.com/d3-selection@^3.0.0",
+    "d3-transition": "https://aistudiocdn.com/d3-transition@^3.0.1"
+  }
+}
+</script>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+    /* Base styles are now handled in index.css */
+  </style>
+  <style>
+    /* Responsive Styles */
+    .desktop-nav {
+      display: flex;
+    }
+    .mobile-menu-button-container {
+      display: none;
+    }
+    .mobile-menu-button {
+      background: none;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      z-index: 1001; /* Ensure it's above the overlay */
+    }
+    .mobile-menu-button div {
+      width: 28px;
+      height: 2px;
+      background-color: var(--color-text-primary);
+      margin: 6px 0;
+      transition: transform var(--transition-normal), background-color var(--transition-normal);
+    }
+    
+    .mobile-nav-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--color-surface);
+      z-index: 1000;
+      opacity: 0;
+      transform: translateX(-100%); /* Animate slide-in from left */
+      visibility: hidden; /* Prevent interaction when closed */
+      pointer-events: none; /* Explicitly disable mouse events when hidden */
+      transition: transform var(--transition-normal), opacity var(--transition-normal), visibility var(--transition-normal);
+      overflow-y: auto;
+      padding: var(--space-24) var(--space-8) var(--space-8) var(--space-8);
+    }
+
+    .mobile-nav-overlay.is-open {
+      opacity: 1;
+      transform: translateX(0);
+      visibility: visible;
+      pointer-events: auto; /* Re-enable mouse events when open */
+      transition: transform var(--transition-normal), opacity var(--transition-normal), visibility 0s;
+    }
+    
+    .subsection-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "viz"
+        "text";
+      gap: var(--space-6);
+      align-items: start;
+    }
+
+    .subsection-grid .viz-content {
+      grid-area: viz;
+    }
+    .subsection-grid .text-content {
+      grid-area: text;
+    }
+
+    @media (min-width: 1024px) {
+      .subsection-grid {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "text viz";
+        gap: var(--space-12);
+      }
+    }
+
+    @media (max-width: 800px) {
+      .desktop-nav {
+        display: none;
+      }
+      .mobile-menu-button-container {
+        display: block;
+      }
+      
+      .main-content {
+        padding-top: 60px !important;
+        height: auto !important;
+        overflow-y: visible !important;
+      }
+
+      .content-wrapper {
+        padding: var(--space-6) !important;
+      }
+
+      /* Typography adjustments */
+      .hero {
+        height: 250px !important;
+        margin-bottom: 0 !important; /* Remove margin for tighter mobile layout */
+      }
+
+      /* Typography is now handled in index.css responsive styles */
+    }
+  </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

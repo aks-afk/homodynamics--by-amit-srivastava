@@ -1,0 +1,28 @@
+# Cloudflare Pages Configuration
+name = "homodynamics-website"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "npm run build"
+cwd = "."
+publish = "dist"
+
+[build.environment_variables]
+NODE_VERSION = "18"
+
+# Environment variables for production
+[env.production.vars]
+VITE_APP_TITLE = "Homodynamics - The Definitive Guide"
+VITE_APP_DESCRIPTION = "An interactive exploration of Homodynamics: synthesizing ancient wisdom with modern scientific understanding"
+VITE_ENABLE_PERFORMANCE_MONITORING = "true"
+VITE_PERFORMANCE_SAMPLE_RATE = "0.1"
+VITE_ENABLE_ERROR_REPORTING = "true"
+VITE_ERROR_REPORTING_SAMPLE_RATE = "1.0"
+VITE_ENABLE_EXPERIMENTAL_FEATURES = "false"
+VITE_ENABLE_DEBUG_MODE = "false"
+
+# Preview environment
+[env.preview.vars]
+VITE_APP_TITLE = "Homodynamics - Preview"
+VITE_ENABLE_DEBUG_MODE = "true"
+VITE_ENABLE_EXPERIMENTAL_FEATURES = "true"
