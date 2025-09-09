@@ -1,6 +1,3 @@
-# SPA routing support - redirect all routes to index.html
-/*    /index.html   200
-
 # Security headers
 /*
   X-Frame-Options: DENY
@@ -24,3 +21,6 @@
 # Cache control for manifest
 /manifest.json
   Cache-Control: public, max-age=86400
+
+# SPA routing support - redirect all routes to index.html
+/*    /index.html   200
