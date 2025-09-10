@@ -12,7 +12,7 @@ import AboutViz from './components/visualizations/AboutViz';
 
 // New visualization imports
 import TheWordViz from './components/visualizations/TheWordViz';
-import ThreeComponentsViz from './components/visualizations/ThreeComponentsViz';
+import ThreeComponentsViz from './components/visualizations/ThreeComponents/ThreeComponentsViz';
 import SystemsTheoryLensViz from './components/visualizations/SystemsTheoryLensViz';
 import ThreeDimensionsViz from './components/visualizations/ThreeDimensionsViz';
 import AllegoricalJourneyViz from './components/visualizations/AllegoricalJourneyViz';
@@ -234,7 +234,7 @@ const rawContentData: Section[] = [
         id: "word-1",
         title: "",
         content: [
-          "<strong>Origin:</strong> Homo (Latin, “human being”) + Dynamics (Greek dynamis, “power, movement”).",
+          "<strong>Origin:</strong> Homo (Latin, \"human being\") + Dynamics (Greek dynamis, \"power, movement\").",
           "<strong>Meaning:</strong> The science of human forces in motion—how we thrive not by standing still but by moving, adapting, and evolving.",
           "<strong>Message for the visitor:</strong> You are not a static self—you are a <strong>dynamic process</strong>, always becoming."
         ],
@@ -250,7 +250,7 @@ const rawContentData: Section[] = [
     subSections: [
        {
         id: "comp-1",
-        title: "Derived from Plato’s tripartite soul—reason, spirit, appetite—but reframed for a modern lens:",
+        title: "Derived from Plato's tripartite soul—reason, spirit, appetite—but reframed for a modern lens:",
         content: [
           "<strong>Biological Dynamics (Brain + Neurochemistry):</strong> How <strong>dopamine, serotonin, cortisol,</strong> and neural circuits shape your focus, motivation, and emotions.",
           "<strong>Logical Dynamics (Physics + Mathematics):</strong> The laws of <strong>energy, entropy, feedback loops,</strong> and <strong>attractor states</strong> that govern every living system.",
@@ -358,7 +358,7 @@ const rawContentData: Section[] = [
               id: "plato-2-2",
               title: "Balancing Stability and Flexibility",
               content: [
-                "Ultimately, the Allegory of the Cave, when viewed through the lens of Homodynamics, highlights the critical importance of <strong>balancing stability and flexibility</strong>. While it is necessary for a living system to maintain a certain degree of stability in order to function and survive, an excessive attachment to a single, unchanging state can lead to stagnation and a failure to adapt to new challenges. The prisoners in the cave are a cautionary tale of what can happen when stability is prioritized above all else. They are trapped in a low-fidelity attractor, unable to see beyond the shadows on the wall. The philosopher, on the other hand, represents the ideal of a system that has achieved a dynamic balance between stability and flexibility. He is able to maintain his core identity and coherence while at the same time remaining open to new experiences and willing to revise his understanding of the world. This is the essence of Homodynamics: the ability to maintain a state of dynamic equilibrium, a <u>continuous dance of stability maintained through change</u>. It is a perspective that values both the security of a stable foundation and the freedom to explore new possibilities, recognizing that true resilience lies in the ability to adapt and evolve in a constantly changing world."
+                "Ultimately, the Allegory of the Cave, when viewed through the lens of Homodynamics, highlights the critical importance of <strong>balancing stability and flexibility</strong>. While it is necessary for a living system to maintain a certain degree of stability in order to function and survive, an excessive attachment to a single, unchanging state can lead to stagnation and a failure to adapt to new challenges. The prisoners in the cave are a cautionary tale of what can happen when stability is prioritized above all else. They are trapped in a low-fidelity attractor, unable to see beyond the shadows on the wall. The philosopher, on the other hand, represents the ideal of a system that has achieved a dynamic balance between stability and flexibility. He is able to maintain his core identity and coherence while at the same time remaining open to new experiences and willing to revise his understanding of the world. This is the essence of Homodynamics: the ability to maintain a state of dynamic equilibrium, a <u>\"continuous dance of stability maintained through change\"</u> is the central tenet of Homodynamics. It is a perspective that values both the security of a stable foundation and the freedom to explore new possibilities, recognizing that true resilience lies in the ability to adapt and evolve in a constantly changing world."
               ],
               component: BalanceBeamViz
             }
@@ -438,7 +438,7 @@ const rawContentData: Section[] = [
         subSections: [
           {
             id: "truths-1-1", title: "Dukkha: The Pervasiveness of Dissatisfaction",
-            content: ["The first of the Four Noble Truths, <strong>Dukkha</strong>, is often translated as \"suffering,\" but it encompasses a much broader range of experiences, including pain, anxiety, frustration, and a general sense of dissatisfaction or unease. According to Buddhism, Dukkha is an inherent and inescapable part of the human condition. It arises from the fact that all things are impermanent and that we are constantly craving for things to be other than they are. From a Homodynamic perspective, Dukkha can be seen as a state of <strong>systemic instability or disequilibrium</strong>. It is the experience of a system that is struggling to maintain its coherence in the face of a constantly changing and often unpredictable world. This struggle is a direct result of the system's attempt to hold on to fixed, unchanging states in a world where change is the only constant. The Homodynamic view suggests that this is a losing battle, and that the attempt to resist change is itself a primary source of suffering. True stability, in this view, is not the absence of change but the ability to adapt and flow with it."],
+            content: ["The first of the Four Noble Truths, <strong>Dukkha</strong>, is often translated as \"suffering,\" but it encompasses a much broader range of experiences, including pain, anxiety, frustration, and a general sense of dissatisfaction or unease. According to Buddhism, Dukkha is an inherent and inescapable part of the human condition. It arises from the fact that all things are impermanent and that we are constantly craving for things to be other than they are. From a Homodynamic perspective, Dukkha can be seen as a state of <strong>systemic instability or disequilibrium</strong>. It is the experience of a system that is struggling to maintain its coherence in the face of a constantly changing and often unpredictable world. This struggle is a direct result of the system's attempt to hold on to fixed, unchanging states in a world where change is the only constant. True stability, in this view, is not the absence of change but the ability to adapt and flow with it."],
             component: DukkhaViz
           },
           {
@@ -580,7 +580,7 @@ const rawContentData: Section[] = [
       {
         id: "pur-2",
         title: "A Model for Multidimensional Optimization",
-        content: ["The framework of the puruṣārthas can be seen as a sophisticated model for <strong>multidimensional optimization</strong>, a way of navigating the complex and often conflicting demands of human life. In a world of limited time and resources, we are constantly forced to make choices and to prioritize our goals. The puruṣārthas provide a set of guiding principles that can help us to make these choices in a way that is both wise and compassionate. They suggest that a well-lived life is not one in which we pursue a single goal to the exclusion of all others, but one in which we strive to create a harmonious balance among the different dimensions of our being."],
+        content: ["The framework of the puruṣārthas can be seen as a sophisticated model for <strong>multidimensional optimization</strong>, a way of navigating the complex and often conflicting demands of human life. In a world of limited time and resources, we are constantly forced to make choices and to prioritize our goals. The puruṣārthas provide a set of guiding principles that can help us to make these choices in a way that is both wise and compassionate. They suggest that a well-lived life is one in which we pursue a single goal to the exclusion of all others, but one in which we strive to create a harmonious balance among the different dimensions of our being."],
         component: MultidimensionalOptimizationViz,
         subSections: [
           {id: "pur-2-1", title: "Sustainable Well-being Through Dynamic Balance", content: ["The puruṣārthas suggest that <strong>sustainable well-being</strong> is not a matter of maximizing a single variable, such as wealth or pleasure, but of achieving a <strong>dynamic balance</strong> among the four aims of life. This is a perspective that is in full resonance with the Homodynamic view of health and vitality. A system that is optimized for a single goal is often a fragile and unstable system, one that is vulnerable to perturbations and that can easily become dysfunctional. A system that is optimized for multiple, competing goals, on the other hand, is a robust and resilient system, one that is able to adapt to changing circumstances and to maintain its overall coherence and well-being. The puruṣārthas provide a framework for achieving this kind of robust, multi-objective optimization, and they offer a powerful model for creating a life that is both successful and meaningful."], component: SustainableWellbeingViz },
